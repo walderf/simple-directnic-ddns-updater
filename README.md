@@ -70,7 +70,7 @@ WantedBy=timers.target
 ```
 #!/bin/bash
 IPADDR=$(wget -q -O- http://whatismyip.akamai.com --no-check-certificate)
-RESULT=$(wget -q -O- "https://directnic.com/dns/gateway/ __\<YOUR ID STRING HERE\>__ /?data=$IPADDR")
+RESULT=$(wget -q -O- "https://directnic.com/dns/gateway/ **<YOUR ID STRING HERE>** /?data=$IPADDR")
 ```  
 > __*You can use whatever IP checking service you desire for obtaining the IPADDR variable, or a different method which tailors to your needs.
 > This is for DirectNIC but can also be utilized with any provider that allows HTTP GET requests for updating.*__  
