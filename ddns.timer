@@ -1,0 +1,12 @@
+# /etc/systemd/system/ddns.timer
+# systemctl start ddns.timer
+# systemctl enable ddns.timer
+[Unit]
+Description=Update directnic ddns provider
+
+[Timer]
+OnBootSec=15m
+OnUnitActiveSec=12hr
+
+[Install]
+WantedBy=timers.target

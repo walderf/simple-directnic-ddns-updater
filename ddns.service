@@ -1,0 +1,28 @@
+# /etc/systemd/system/ddns.service
+[Unit]
+Description=Updates directnic ddns via wget (or curl)
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/directddnsgrab.sh 
+#You might have or want to change user/group
+#User=nobody
+#Group=nogroup
+#Or just use a dynamically generated one
+DynamicUser=yes
+
+PrivateTmp=yes
+ProtectSystem=strict
+ProtectHome=true
+MemoryDenyWriteExecute=yes
+PrivateDevices=true
+PrivateUsers=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictNamespaces=true
+LockPersonality=true
+RestrictRealtime=true
+
+[Install]
+WantedBy=multi-user.target
